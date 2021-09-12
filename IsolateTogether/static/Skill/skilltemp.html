@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900|Varela+Round"
+        rel="stylesheet" />
+
+    <link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="./skilltemp.css">
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+        <div id="header-wrapper">
+            <div id="header" class="container">
+                <div id="logo">
+                    <h1><a href="#">Isolate Together</a></h1>
+
+                </div>
+                <div>
+                    <img src="logo.jpg" style="float:right;width:200px;height:200px;position: relative; right:-15px;">
+                </div>
+            </div>
+            <div id="menu" class="container">
+                <ul>
+                    <li><a href="#" accesskey="1" title="">Home</a></li>
+                    <li><a href="#" accesskey="1" title="">Why Isolate Together</a></li>
+                    <li class="current_page_item"><a href="#" accesskey="2" title="">Our Services</a></li>
+                    <li><a href="#" accesskey="3" title="">About Us</a></li>
+                    <li><a href="#" accesskey="4" title="">Sign In</a></li>
+                    <li><a href="#" accesskey="5" title="">Get Started</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="abc">
+        <!-- partial:index.partial.html -->
+        <br/>
+        <h1 align="center" style="color:#970A42;">SKILLS</h1><br><br>
+
+        <!-- partial:index.partial.html -->
+
+        <script type="text/javascript">
+            function showfield(name) {
+                if (name == 'Other') document.getElementById('div1').innerHTML = '<h3><strong>If Others:</strong><h3> <input type="text" name="other" placeholder="Enter your Occupation" />';
+                else document.getElementById('div1').innerHTML = '';
+            }
+        </script>
+
+        <div class="col-xs-6">
+            <h3><strong>I am a : </strong></h3>
+            <select class="form-control" name="select1" id="select1"
+                onchange="showfield(this.options[this.selectedIndex].value)">
+                <option value="1">Student</option>
+                <option value="2">Actor</option>
+                <option value="3">Politician</option>
+                <option value="4">Professor</option>
+                <option value="5">Manager</option>
+                <option value="Other">Other</option>
+            </select>
+            <div id="div1"></div>
+        </div>
+   
+
+
+    <!-- partial:index.partial.html -->
+    <div class="main">
+
+
+        <div id="count"></div>
+        
+        <div class="box">
+            <input id="item" type="text" placeholder="Enter Your Skills">
+            <button id="add">Add</button>
+        </div>
+        <div class="output">
+           <!-- <input type="text" id="search" placeholder="Search For ToDo">-->
+            <ol id="list"></ol>
+        </div>
+
+        <button id="clear">Clear All</button>
+        <br/>
+        <br/>
+        <br/>
+    </div>
+    </div>
+    <!-- partial -->
+    <script src="./skilltemp.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+
+
+	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
+
+</body>
+
+</html>

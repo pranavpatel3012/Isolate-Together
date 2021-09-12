@@ -1,0 +1,16 @@
+
+/*( 'box-sizing' will not work with this code )*/
+textarea{  
+  /* box-sizing: padding-box; */
+  overflow:auto;
+  /* demo only: */
+  padding:10px;
+  width:250px;
+  height:80px;
+  font-size:14px;
+  margin:50px auto;
+  display:flex;
+  
+  border-radius:10px;
+  border:6px solid #970A42;
+}

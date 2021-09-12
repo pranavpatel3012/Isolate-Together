@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Post signIn</title>
+    <style>
+        div{
+            position: absolute;
+            right: 10px;
+            top: 5px;
+        }
+    </style>
+</head>
+<body>
+    You are successufullt signed in.
+    <br><br>
+    Welcome : {{e}}
+    <div>
+        <button type="button" onclick="location.href='{% url 'logout' %}'">Log Out</button>
+    </div>
+    <button type="button" onclick="location.href = '{% url 'profile' %}'">My Profile</button>
+    <button type="button" value="home" onclick="location.href='{% url 'homea' %}'">Home</button>
+    <button type="button" value="chat" onclick="location.href='{% url 'chat' %}'">CHat</button>
+</body>
+</html>

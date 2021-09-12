@@ -1,0 +1,111 @@
+{% load static %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900|Varela+Round" rel="stylesheet" />
+<link href="{% static 'OurServices/homeRemedies.css' %}" rel="stylesheet" type="text/css" media="all" />
+<link href="{% static 'OurServices/default.css' %}" rel="stylesheet" type="text/css" media="all" />
+<link href="{% static 'OurServices/fonts.css' %}" rel="stylesheet" type="text/css" media="all" />
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<!--[if IE 6]>
+<link href="default_ie6.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+<style> 
+
+
+
+
+input[type=text] {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 400px;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+
+input[type=text]:focus {
+  border: 13px solid #555;
+}
+</style>
+</head>
+<body>
+<div id="wrapper">
+	<div id="header-wrapper">
+		<div id="header" class="container">
+			<div id="logo">
+        <h1><a href="{% url 'homea' %}">Isolate Together</a></h1>
+				
+			</div>
+			<div>
+        <img src="{% static 'OurServices/logo.jpg' %}" style="float:right;width:200px;height:200px;">
+			</div>
+		</div>
+		<div id="menu" class="container">
+			<ul>
+        <li><a href="{% url 'homea' %}" accesskey="1" title="">Home</a></li>
+        <li><a href="/whyIsolateTogether" accesskey="1" title="">Why Isolate Together</a></li>
+        <li><a href="/ourService_card" accesskey="2" title="">Our Services</a></li>
+        <li><a href="#" accesskey="3" title="">About Us</a></li>
+              {% if username %}
+              <li><a href="{% url 'profile' %}" accesskey="4" title="">{{ username }}</a></li>
+              <li><a href="{% url 'logout' %}" accesskey="5" title="">Logout</a></li>
+              {% else %}
+              <li><a href="/signin" accesskey="4" title="">Sign In</a></li>
+              <li><a href="{% url 'select' %}" accesskey="5" title="">Get Started</a></li>
+              {% endif %}
+        </ul>
+		</div>
+	</div>
+</div>
+
+<div class="w3-row w3-padding-64" id="about">
+    <div class="w3-col m6 w3-padding-large w3-hide-small">
+     <img src="https://www.healthshots.com/wp-content/uploads/2020/07/Natural-remedies-for-covid-19.jpg" class="w3-round w3-image w3-opacity-min" alt="Table Setting" width="600" height="450" align="right"><hr>
+    
+    </div>
+
+    <div class="w3-col m5 w3-padding-large">
+      <h1 class="w3-center">Home remedies</h1><br>
+      <h5 class="w3-center"><strong>Need of the Hour</strong></h5>
+      <p class="w3-large"> <span class="w3-tag w3-light-grey"></span> </p>
+      <p class="w3-large w3-text-grey w3-hide-medium">There is no fixed medicine nor any vaccine for Covid-19 uptill now. Some of the home remedies 
+      have been proven to be effective in a good number of cases.Talk with your doctor or pharmacist before trying any home remedy.We emphasize 
+      our recovered users to suggest the home remedies only if they have been effective and have speed up their recovery.  <strong>DO NOT 
+      BELEIVE OR SPREAD RUMOURS.</strong>  </p>
+    </div>
+
+  </div>
+  
+  <hr>
+
+    <div class="abc">
+      <h1 style="text-align:center">suggest the home remedies below</h1><br>
+      <form action="postRemedies" method="POST">
+        {% csrf_token %}
+      <input type="text" id="" name="remedies" placeholder="Type in here..." ><br><br><br><br>
+
+      
+      <input type="submit" class="button1" value="Submit">
+    </form>
+    </div>
+
+    </div>
+
+
+  <hr>
+  </body>
+  </html>

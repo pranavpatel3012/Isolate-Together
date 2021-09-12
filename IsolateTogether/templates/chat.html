@@ -1,0 +1,174 @@
+{% load static %}
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
+
+<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900|Varela+Round"
+  rel="stylesheet" />
+
+<link href="{% static 'chat/fonts_chat.css' %}" rel="stylesheet" type="text/css" media="all" />
+
+<html>
+
+<head>
+  <title></title>
+</head>
+
+<body>
+
+  <div id="wrapper">
+    <div id="header-wrapper">
+      <div id="header" class="container">
+        <div id="logo">
+          <h1><a href="{% url 'homea' %}">Isolate Together</a></h1>
+
+        </div>
+        <div>
+          <img src="{% static 'OurServices/logo.jpg' %}" style="float:right;width:200px;height:200px;">
+        </div>
+      </div>
+      <div id="menu" class="container">
+        <ul>
+          <li><a href="{% url 'homea' %}" accesskey="1" title="">Home</a></li>
+          <li><a href="/whyIsolateTogether" accesskey="1" title="">Why Isolate Together</a></li>
+          <li><a href="/savedChats" accesskey="2" title="">Chats</a></li>
+          <li><a href="/aboutus" accesskey="3" title="">About Us</a></li>
+          {% if username %}
+          <li><a href="/savedChats" accesskey="4" title="">{{ username }}</a></li>
+          <li><a href="{% url 'logout' %}" accesskey="5" title="">Logout</a></li>
+          {% else %}
+          <li><a href="/signin" accesskey="4" title="">Sign In</a></li>
+          <li><a href="{% url 'select' %}" accesskey="5" title="">Get Started</a></li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-database.js"></script>
+
+  <link rel="stylesheet" href="{% static 'chat/normalize_chat.css' %}">
+
+  <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+  <link rel='stylesheet prefetch'
+    href='https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.3/jquery.mCustomScrollbar.min.css'>
+
+  <link rel="stylesheet" href="{% static 'chat/style3.css' %}">
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+  <script>
+    // Your web app's Firebase configuration
+    var myName = "{{username}}";
+
+    // # Obviously keys are fake
+    var firebaseConfig = {
+      apiKey : "AIzaSyD-Eq232dW_9loS8h6f-KWAFFIivAsdylbc",
+      authDomain : "isolate-together-88b63.firebaseapp.com",
+      databaseURL : "https://isolate-together-88b63.firebaseio.com",
+      projectId : "isolate-together-8c363",
+      storageBucket : "isolate-together-8c363.appspot.com",
+      messagingSenderId : "769043346241",
+      appId : "1:76904251146241:web:c69ad42353107adbca6320"
+    };
+    
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    onLoad();
+
+    
+
+    function deleteMessage(self) {
+      var messageId = self.getAttribute("data-id");
+      //prompt(messageId)
+      firebase.database().ref("Chats/{{chatId}}").child(messageId).remove();
+      document.getElementById("message-" + snapshot.key).innerHTML = "This message has been deleted";
+    }
+
+    function sendMessage() {
+      var message = document.getElementById("message").value;
+      firebase.database().ref("Chats/{{chatId}}").push().set({
+        "message": message,
+        "sender": myName
+      });
+      return false;
+    }
+
+    
+  
+    
+  </script>
+
+
+  
+
+  <style>
+    figure.avatar {
+      bottom: 0px !important;
+    }
+
+    .btn-delete {
+      background: red;
+      color: white;
+      border: none;
+      margin-left: 10px;
+      border-radius: 5px;
+    }
+  </style>
+
+  <div class="chat">
+    <div class="chat-title">
+
+      <h1>{{recUser}}</h1>
+      <figure class="avatar">
+        <img
+          src="https://p7.hiclipart.com/preview/349/273/275/livechat-online-chat-computer-icons-chat-room-web-chat-others.jpg" />
+      </figure>
+    </div>
+    <div class="messages">
+      <div class="messages-content"></div>
+    </div>
+    <div class="message-box">
+      <textarea type="text" class="message-input" id="message" placeholder="Type message..."></textarea>
+      <button type="submit" class="message-submit">Send</button>
+    </div>
+
+  </div>
+  <div class="bg"></div>
+
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script
+    src='https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.3/jquery.mCustomScrollbar.concat.min.js'></script>
+
+
+    
+  <script src="{% static 'chat/index_chat.js' %}"></script>
+<script>
+  firebase.database().ref("Chats/{{chatId}}").on("child_added", function (snapshot) {
+    if (snapshot.val().sender == myName) {
+      $('<div class="message message-personal"><figure class="avatar"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpdX6tPX96Zk00S47LcCYAdoFK8INeCElPeJrVDrh8phAGqUZP_g" /></figure><div id="message-' + snapshot.key + '">' + snapshot.val().message + '<button class="btn-delete" data-id="' + snapshot.key + '" onclick="deleteMessage(this);">Delete</button></div></div>').appendTo($('.mCSB_container')).addClass('new');
+      $('.message-input').val(null);
+    } else {
+      $('<div class="message new"><figure class="avatar"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpdX6tPX96Zk00S47LcCYAdoFK8INeCElPeJrVDrh8phAGqUZP_g" /></figure><div id="message-' + snapshot.key + '">' + snapshot.val().sender + ': ' + snapshot.val().message + '</div></div>').appendTo($('.mCSB_container')).addClass('new');
+    }
+    
+    setDate();
+    updateScrollbar();
+
+    firebase.database().ref("Chats/{{chatId}}").on("child_removed", function (snapshot) {
+      document.getElementById("message-" + snapshot.key).innerHTML = "This message has been deleted";
+      
+    });
+  });
+</script>
+
+</body>
+
+
+</html>

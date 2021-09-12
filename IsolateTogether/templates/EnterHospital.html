@@ -1,0 +1,166 @@
+{% load static %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
+
+<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900|Varela+Round"
+  rel="stylesheet" />
+<link href="{% static 'OurServices/default.css' %}" rel="stylesheet" type="text/css" media="all" />
+<link href="{% static 'OurServices/fonts.css' %}" rel="stylesheet" type="text/css" media="all" />
+
+<head>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <style>
+    input[type=text] {
+      width: 50%;
+      padding: 12px 20px;
+      margin: 8px 400px;
+      box-sizing: border-box;
+      border: 3px solid #ccc;
+      -webkit-transition: 0.5s;
+      transition: 0.5s;
+      outline: none;
+    }
+
+    input[type=text]:focus {
+      border: 13px solid #555;
+    }
+  </style>
+
+
+  <meta charset="UTF-8">
+
+  <link rel="stylesheet" href="{% static 'OurServices/exp.css' %}">
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+  <link rel="stylesheet" href="% static 'OurServices/EnterHospital.css' %}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script>
+    function random_function() {
+      var a = document.getElementById("state").value;
+      if (a === "Gujarat") {
+        var arr = ["Ahmedabad", "Surat"];
+      }
+      else if (a === "Maharashtra") {
+        var arr = ["Mumbai", "Pune", "Nashik"];
+      }
+      else if (a === "Rajasthan") {
+        var arr = ["Jaipur", "Udaipur", "Jaisalmer"];
+      }
+      else if (a === "Delhi") {
+        var arr = ["Delhi NCR", "New Delhi"];
+      }
+
+      var string = "";
+
+      for (i = 0; i < arr.length; i++) {
+        string = string + "<option value=" + arr[i] + ">" + arr[i] + "</option>";
+      }
+      document.getElementById("city").innerHTML = string;
+    }
+  </script>
+
+
+</head>
+
+<body>
+
+
+
+
+  <div id="wrapper">
+    <div id="header-wrapper">
+      <div id="header" class="container">
+        <div id="logo">
+          <h1><a href="{% url 'homea' %}">Isolate Together</a></h1>
+
+        </div>
+        <div>
+          <img src="{% static 'OurServices/logo.jpg' %}" style="float:right;width:200px;height:200px;">
+        </div>
+      </div>
+      <div id="menu" class="container">
+        <ul>
+          <li><a href="{% url 'homea' %}" accesskey="1" title="">Home</a></li>
+          <li><a href="/whyIsolateTogether" accesskey="1" title="">Why Isolate Together</a></li>
+          <li><a href="/ourService_card" accesskey="2" title="">Our Services</a></li>
+          <li><a href="#" accesskey="3" title="">About Us</a></li>
+          {% if username %}
+          <li><a href="{% url 'profile' %}" accesskey="4" title="">{{ username }}</a></li>
+          <li><a href="{% url 'logout' %}" accesskey="5" title="">Logout</a></li>
+          {% else %}
+          <li><a href="/signin" accesskey="4" title="">Sign In</a></li>
+          <li><a href="{% url 'select' %}" accesskey="5" title="">Get Started</a></li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="w3-row w3-padding-64" id="about">
+    <div class="w3-col m6 w3-padding-large w3-hide-small">
+      <img src="https://healthcarecmi.files.wordpress.com/2020/03/hospital.gif?w=640"
+        class="w3-round w3-image w3-opacity-min" alt="Table Setting" width="600" height="450" align="right">
+      <hr>
+
+    </div>
+
+    <div class="w3-col m5 w3-padding-large">
+      <h1 class="w3-center" style="color:#970A42; ">Hospitals in your city</h1>
+      <h4 class="w3-center"><strong>"A hospital alone shows what war is. "</strong></h4>
+      <h5 class="w3-right" style="margin: 0;"><strong>-Erich Maria Remarque</strong></h5>
+      <p class="w3-large"> <span class="w3-tag w3-light-grey"></span> </p>
+      <p class="w3-large w3-text-grey w3-hide-medium">The hospital industry has been working day in and day out since 7
+        months now. We at
+        <strong>Isolate Together</strong> salute all the frontline heroes who risk their lives to save others'. There
+        have been numerous cases wherein
+        the infected patient has died due to lack of guidance of proper medical facilities.Its a humble request to all
+        the recovered users to suggest
+        some of the fine hospitals in their cities which might be helpful to the infected patients in the respective
+        cities. </p>
+    </div>
+
+  </div>
+
+
+
+
+  <div class="abc">
+    <!-- partial:index.partial.html -->
+    <h1 align="center" style="color:#970A42;">select your location & enter best hospital</h1><br><br>
+
+    <!-- partial:index.partial.html -->
+    <form action="postHospital" method="POST">
+      {% csrf_token %}
+      <div class="col-xs-6">
+        <select class="form-control" name="state" id="state" onchange="random_function()">
+          <option value="Gujarat">Gujarat</option>
+          <option value="Maharashtra">Maharashtra</option>
+          <option value="Rajasthan">Rajasthan</option>
+          <option value="Delhi">Delhi</option>
+        </select>
+      </div>
+      <div class="col-xs-6">
+        <select class="form-control" name="city" id="city">
+
+      </div><br><br><br><br>
+
+      <input type="text" id="" name="hospital" placeholder="Enter the best Covid hospital in your area"><br><br><br><br>
+
+      <input type="submit" class="button1" value="Submit">
+    </form>
+
+    <!-- partial -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+
+    <!-- partial -->
+    <script src="{% static 'OurServices/SelectCity.js' %}"></script>
+
+  </div>
+</body>
+
+</html>

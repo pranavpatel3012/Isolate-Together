@@ -1,0 +1,109 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900|Varela+Round"
+        rel="stylesheet" />
+
+    <link href="{% static 'Skill/fonts.css' %}" rel="stylesheet" type="text/css" media="all" />
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="{% static 'Skill/skilltemp.css' %}">
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+        <div id="header-wrapper">
+            <div id="header" class="container">
+                <div id="logo">
+                    <h1><a href="{% url 'homea' %}">Isolate Together</a></h1>
+
+                </div>
+                <div>
+                    <img src="{% static 'OurServices/logo.jpg' %}" style="float:right;width:200px;height:200px;">
+                </div>
+            </div>
+            <div id="menu" class="container">
+                <ul>
+                    <li><a href="{% url 'homea' %}" accesskey="1" title="">Home</a></li>
+                    <li><a href="/whyIsolateTogether" accesskey="1" title="">Why Isolate Together</a></li>
+                    <li><a href="/ourService_card" accesskey="2" title="">Our Services</a></li>
+                    <li><a href="/aboutus" accesskey="3" title="">About Us</a></li>
+                    {% if username %}
+                    <li><a href="{% url 'profile' %}" accesskey="4" title="">{{ username }}</a></li>
+                    <li><a href="{% url 'logout' %}" accesskey="5" title="">Logout</a></li>
+                    {% else %}
+                    <li><a href="/signin" accesskey="4" title="">Sign In</a></li>
+                    <li><a href="{% url 'select' %}" accesskey="5" title="">Get Started</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="abc">
+        <!-- partial:index.partial.html -->
+        <br />
+        <h1 align="center" style="color:#970A42;">SKILLS</h1><br><br>
+
+        <!-- partial:index.partial.html -->
+
+        <script type="text/javascript">
+            function showfield(name) {
+                if (name == 'Other') document.getElementById('div1').innerHTML = '<h3><strong>If Others:</strong><h3> <input type="text" name="other" placeholder="Enter your Occupation" />';
+                else document.getElementById('div1').innerHTML = '';
+            }
+        </script>
+        <form action="postSkill" method="POST">
+            {% csrf_token %}
+
+            <div class="col-xs-6">
+                <h3><strong>I am a : </strong></h3>
+                <select class="form-control" name="profession" id="select1"
+                    onchange="showfield(this.options[this.selectedIndex].value)">
+                    <option value="Student">Student</option>
+                    <option value="Actor">Actor</option>
+                    <option value="Politician">Politician</option>
+                    <option value="Professor">Professor</option>
+                    <option value="Manager">Manager</option>
+                    <option value="Other">Other</option>
+                </select>
+                <div id="div1"></div>
+            </div>
+            <!-- partial:index.partial.html -->
+            <br>
+            <div class="main">
+
+
+                <div id="count"></div>
+
+                <div class="box">
+                    <input id="item" name="skill" type="text" placeholder="Enter Your Skills">
+                    <!-- <button id="add">Add</button> -->
+                </div>
+
+                <input type="submit" class="button1" value="Submit">
+            </div>
+        </form>
+
+
+        
+        <br />
+        <br />
+        <br />
+    </div>
+    <!-- partial -->
+    <script src="{% static 'Skill/skilltemp.js' %}"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+
+
+    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+
+</body>
+
+</html>

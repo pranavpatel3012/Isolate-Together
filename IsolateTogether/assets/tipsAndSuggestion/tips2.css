@@ -1,0 +1,53 @@
+body {
+  font-family: "Segoe UI";
+}
+
+@keyframes mymove {
+  from {top: 500px;}
+  to {top: 0px;}
+}
+
+@keyframes mymove1 {
+  from {left: 500px;}
+  to {left: 0px;}
+}
+.two-col {
+  display: flex;
+  flex-direction: col;
+  margin-left: 80px;
+  position: relative;
+  animation: mymove 4s ;
+}
+.two-col:first-child {
+  width: 50%;
+}
+.two-col:last-child {
+  width: 50%;
+}
+.topcontainer {
+  background-color: #202020;
+  padding: 0.2rem 1rem;
+  margin: 0rem;
+  margin-top: 1rem;
+
+  position: relative;
+  animation: mymove1 2s ;
+}
+.topcontainer p {
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.tip {
+  border-left: #107c10 0.25rem solid;
+  background-color: #6ea86e;
+}
+.tip p {
+  color: #0b570b;
+}
+.danger {
+  border-left: #e81123 0.25rem solid;
+  background-color: #d67c83;
+}
+.danger p {
+  color: #a20c18;
+}

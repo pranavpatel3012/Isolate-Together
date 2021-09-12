@@ -1,0 +1,141 @@
+{% load static %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" >
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Lora|Poppins" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="{% static 'FromTheRecovered/ftrexp.css' %}">
+<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900|Varela+Round" rel="stylesheet" />
+<link href="{% static 'FromTheRecovered/ftrexp1.css' %}" rel="stylesheet" type="text/css" media="all" />
+<link href="{% static 'FromTheRecovered/fonts.css' %}" rel="stylesheet" type="text/css" media="all" />
+
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+
+<div id="wrapper">
+	<div id="header-wrapper">
+		<div id="header" class="container">
+			<div id="logo">
+        <h1><a href="{% url 'homea' %}">Isolate Together</a></h1>
+				
+			</div>
+			<div>
+        <img src="{% static 'OurServices/logo.jpg' %}" style="float:right;width:200px;height:200px;">
+			</div>
+		</div>
+		<div id="menu" class="container">
+			<ul>
+        <li><a href="{% url 'homea' %}" accesskey="1" title="">Home</a></li>
+        <li><a href="/whyIsolateTogether" accesskey="1" title="">Why Isolate Together</a></li>
+        <li><a href="/ourService_card" accesskey="2" title="">Our Services</a></li>
+        <li><a href="#" accesskey="3" title="">About Us</a></li>
+        {% if username %}
+        <li><a href="{% url 'profile' %}" accesskey="4" title="">{{ username }}</a></li>
+        <li><a href="{% url 'logout' %}" accesskey="5" title="">Logout</a></li>
+        {% else %}
+        <li><a href="/signin" accesskey="4" title="">Sign In</a></li>
+        <li><a href="{% url 'select' %}" accesskey="5" title="">Get Started</a></li>
+        {% endif %}
+      </ul>
+		</div>
+	</div>
+</div>
+<div class="quotes">
+
+<p class="item-1">"Germs, like everyone else, find you irresistible! Get well soon!"</p>
+
+<p class="item-2">"Try not to think of it as a hospital stay. Think of it as a spa package that includes meals, regular health evaluations and jello cubes."</p>
+
+<p class="item-3">"Remember to just take it one day at a time and in no time, you will be completely healthy and smiling once again."</p>
+
+
+
+
+</div>
+
+<!-- partial:index.partial.html -->
+<div class="vertical-align">
+  <section class="story-carousel container">
+    <input class="story-carousel__radio" id="story-0" type="radio" name="story-carousel" checked="checked"/>
+    <article class="story-carousel__story story">
+      <figure class="story__figure" style="background-image: url(https://www.healthyplace.com/sites/default/files/inline-images/addiction-quote-hp-75-1.jpg"></figure>
+      <div class="story__content">
+        <h2 class="story__title" style="margin: 0;">Amitabh Bachchan</h2>
+        <h4 style="margin: 0;"><strong>Age:- 75,Mumbai</strong></h4>
+        
+        <p class="story__summary">Medication and a lot of rehabilitation helped me gradually improve until I only had a mild sensory and motor sequel. I was able to return to work at the Cardiovascular Institute of Buenos Aires, which was what I wanted the most, but from my home, using the telemedicine resources and teleconsultations available at the hospital. I started working in an adapted healthcare setting, mainly in the critical care unit treating patients in cardiogenic shock, advanced heart failure or ventricular assistance, and heart transplantation. I also had to adapt to cardiovascular ultrasound methods, since I am learning to do ultrasounds with both hands in my fellowship.
+
+Telemedicine is now a task that I know very well and an invaluable resource at this stage. I believe it is absolutely necessary to continue caring for and monitoring our patients with heart failure and heart transplantation, especially after hospital discharge. The early post-discharge period immediately following hospitalization is known as the ‘vulnerable phase’ and carries a particularly high risk of poor clinical outcome.</p>
+        <time class="story__date" datetime="2017-02-22">22 Feb, 2017</time>
+      </div>
+    </article>
+    
+    <input class="story-carousel__radio" id="story-1" type="radio" name="story-carousel"/>
+    <article class="story-carousel__story story">
+      <figure class="story__figure" style="background-image: url(https://oceanrecoverycentre.com/wp-content/uploads/2017/03/image20.png"></figure>
+      <div class="story__content">
+        <h2 class="story__title" style="margin: 0;">Donald Trump</h2>
+        <h4 style="margin: 0;"><strong>Age:- 74,USA</strong></h4>
+        <p class="story__summary">We are able to continue attending remotely the hospital’s academic meetings, the inpatient discussion sessions and Friday’s heart transplant meetings with our multidisciplinary team where we evaluate and follow-up the heart transplant patients. During this pandemic, I am trying to collaborate from home by making updates of recent relevant science relating to cardiovascular disease and COVID-19 in WHF’s The Heart in Time of COVID-19 blog, because there is little yet known about the potential cardiac complications which may occur following COVID-19 infection. And we hope this knowledge will be shared and together we can learn how to prevent and treat this disease.</p>
+        <time class="story__date" datetime="2017-02-18">18 Feb, 2017</time>
+      </div>
+    </article>
+    <input class="story-carousel__radio" id="story-2" type="radio" name="story-carousel"/>
+    <article class="story-carousel__story story">
+      <figure class="story__figure" style="background-image: url(https://thehealthsessions.com/wp-content/uploads/Quote-Recovery-DemiLovato.jpg); background-position: 75% 60%;"></figure>
+      <div class="story__content">
+        <h2 class="story__title" style="margin: 0;">Amit Shah</h2>
+        <h4 style="margin: 0;"><strong>Age:- 55,Delhi</strong></h4>
+        <p class="story__summary">I am also in charge of one of the most important tasks, that I also enjoy the most too, which is continuing the academic training of cardiology residents. They are working tirelessly on a daily basis, and we must not forget that they are still in their training stage. We must help them to achieve the expected knowledge and skills. In order to do that, we use interactive video classes, daily clinical cases and different types of new articles. We also use educational material from organizations such as the European Society of Cardiology, the Argentine Society of Cardiology and the ACC.20/WCC Congress.</p>
+        <time class="story__date" datetime="2017-02-15">15 Feb, 2017</time>
+      </div>
+    </article>
+    <input class="story-carousel__radio" id="story-3" type="radio" name="story-carousel"/>
+    <article class="story-carousel__story story">
+      <figure class="story__figure" style="background-image: url(https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/inspirational-quotes-williiam-james-2-1562000243.png?w=1260&amp;h=750&amp;auto=compress&amp;cs=tinysrgb); background-position: 75% 60%;"></figure>
+      <div class="story__content">
+        <h2 class="story__title" style="margin: 0;">Arjun Kapoor</h2>
+        <h4 style="margin: 0;"><strong>Age:- 35,Mumbai</strong></h4>
+        <p class="story__summary">Telemedicine is now a task that I know very well and an invaluable resource at this stage. I believe it is absolutely necessary to continue caring for and monitoring our patients with heart failure and heart transplantation, especially after hospital discharge. The early post-discharge period immediately following hospitalization is known as the ‘vulnerable phase’ and carries a particularly high risk of poor clinical outcome.</p>
+        <time class="story__date" datetime="2017-02-10">10 Feb, 2017</time>
+      </div>
+    </article>
+
+
+
+    <label class="story-carousel__label" for="story-0" id="label-0">Story 1</label>
+    <label class="story-carousel__label" for="story-1" id="label-1">Story 2</label>
+    <label class="story-carousel__label" for="story-2" id="label-2">Story 3</label>
+    <label class="story-carousel__label" for="story-3" id="label-3">Story 4</label>
+
+  </section>
+</div>
+<!-- partial -->
+
+div class="row">
+  <div class="column">
+<div class="container h-100  ">
+  <div class="row h-100 align-items-center justify-content-center ">
+    <div class="main">
+      <div class="info">
+        <img src="https://www.vexels.com/media/users//3/145908/raw/52eabf633ca6414e60a7677b0b917d92.jpg" class="prof rounded-circle img-fluid" />
+        <h1>Amit</h1>
+        <hr>
+      </div>
+      <div class="body3">
+     
+       <p>jhgdfjhgadsfjghfjdashgfjhabdskjfbhasdf
+       sdfdsagsdaggasgafagf</p>
+      </div>
+     
+    </div>
+  </div>
+</div>
+</div>
+  
+</body>
+</html>

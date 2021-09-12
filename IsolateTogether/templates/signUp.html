@@ -1,0 +1,22 @@
+{% if msg %}
+<script>
+    alert('{{ msg }}');
+</script>
+{% endif %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Sign In</title>
+</head>
+<body>
+    <form action="postsignup" method="POST">
+        {% csrf_token %}
+        Name : <input type='text' name="name"> <br>
+        Email : <input type='email' name="email"> <br>
+        Password : <input type="password" name="password" id="pass"> <br>
+        <input type="submit" value="SignUp">
+    </form>
+</body>
+</html>
