@@ -1,0 +1,6 @@
+IsolateTogether/authentication/__pycache__/
+IsolateTogether/IsolateTogether/__pycache__/
+IsolateTogether/chatrooms/__pycache__/
+.vscode
+.vscode/*
+db.sqlite3

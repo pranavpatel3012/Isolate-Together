@@ -1,0 +1,172 @@
+{% load static %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css'>
+  <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.0.8/css/all.css'>
+  <link rel="stylesheet" href="{% static 'OurServices/match.css' %}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://demo.voidcoders.com/htmldemo/fitgear/main-files/assets/css/animate.css">
+
+  <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900|Varela+Round"
+    rel="stylesheet" />
+  <link href="{% static 'OurServices/default.css' %}" rel="stylesheet" type="text/css" media="all" />
+  <link href="{% static 'OurServices/fonts.css' %}" rel="stylesheet" type="text/css" media="all" />
+  <!--[if IE 6]>
+<link href="default_ie6.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+</head>
+
+<body>
+
+
+  <div id="wrapper">
+    <div id="header-wrapper">
+      <div id="header" class="container">
+        <div id="logo">
+          <h1><a href="{% url 'homea' %}">Isolate Together</a></h1>
+
+        </div>
+        <div>
+          <img src="{% static 'OurServices/logo.jpg' %}" style="float:right;width:200px;height:200px;">
+        </div>
+      </div>
+      <div id="menu" class="container">
+        <ul>
+          <li><a href="{% url 'homea' %}" accesskey="1" title="">Home</a></li>
+          <li><a href="/whyIsolateTogether" accesskey="1" title="">Why Isolate Together</a></li>
+          <li><a href="/ourService_card" accesskey="2" title="">Our Services</a></li>
+          <li><a href="/aboutus" accesskey="3" title="">About Us</a></li>
+					{% if username %}
+					<li><a href="/savedChats" accesskey="4" title="">{{ username }}</a></li>
+					<li><a href="{% url 'logout' %}" accesskey="5" title="">Logout</a></li>
+					{% else %}
+					<li><a href="/signin" accesskey="4" title="">Sign In</a></li>
+					<li><a href="{% url 'select' %}" accesskey="5" title="">Get Started</a></li>
+					{% endif %}
+        </ul>
+      </div>
+    </div>
+  </div>
+  <br>
+  <h1>
+    <p style="text-align:center;">Start chatting with any of your matched user</p>
+    <br>
+  </h1>
+    <script>
+      var i=0;
+    </script>
+    {% for user_id,name,loc,gen,i in su_list %}
+    <script>
+
+      if(i%2==0)
+      {
+        document.write("<div class='row'>")
+      }
+      i++;
+    </script>
+    <div class="column">
+      <div class="container h-100  ">
+        <div class="row h-100 align-items-center justify-content-center ">
+          <div class="main">
+            <div class="info">
+              {% if gen == 'male' %}
+              <img src='https://www.vexels.com/media/users//3/145908/raw/52eabf633ca6414e60a7677b0b917d92.jpg'
+                class="prof rounded-circle img-fluid" />
+              {% else %}
+              <img src='https://image.freepik.com/free-vector/smiling-girl-avatar_102172-32.jpg'
+                class=" prof rounded-circle img-fluid" />
+              {% endif %}
+
+              <h1>
+                {{name}}
+              </h1>
+              <hr>
+            </div>
+            <div class="body3">
+              <ul class="fa-ul">
+                <li><span class="fa-li"><i class="fas fa-map-marker-alt"></i></span><strong>
+                    <h4><br><br>
+                      {{loc}}</h4>
+                  </strong></li>
+              <button class="button3" onclick="location.href='getChat/?user_id={{user_id}}';">Chat</button>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      if(i%2==0)
+      {
+        document.write("</div>")
+      }
+      
+    </script>
+
+  
+
+    {% endfor %}
+
+    <!--     
+    {% for user in su_list %}
+    <br>
+    User id : {{user}}
+    <br>
+    <script>getUserData("{{user}}")</script>
+    <div class="column">
+      <div class="container h-100  ">
+        <div class="row h-100 align-items-center justify-content-center ">
+          <div class="main">
+            <div class="info">
+              <script>
+                if (getGender() == 0) {
+                  document.write("<img src='https://www.vexels.com/media/users//3/145908/raw/52eabf633ca6414e60a7677b0b917d92.jpg'")
+                }
+                else {
+                  document.write("<img src='https://image.freepik.com/free-vector/smiling-girl-avatar_102172-32.jpg'")
+
+                }
+              </script>
+
+              class="prof rounded-circle img-fluid" />
+              <h1>
+                <script>document.write(getName())</script>
+              </h1>
+              <hr>
+            </div>
+            <div class="body3">
+              <ul class="fa-ul">
+                <li><span class="fa-li"><i class="fas fa-map-marker-alt"></i></span><strong>
+                    <h4><br><br>
+                      <script>document.write(getCoutnry())</script></br></br></h4>
+                  </strong></li>
+                <button class="button3">Chat</button>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% endfor %} -->
+  </div>
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en" >
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900|Varela+Round" rel="stylesheet" />
+<link href="default.css" rel="stylesheet" type="text/css" media="all" />
+<link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
+<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.0.8/css/all.css'>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+.split {
+  height: 50%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: scroll;
+  padding-top: 20px;
+  margin-top: 350px;
+}
+
+/* Control the left side */
+.left {
+  left: 0;
+  
+}
+
+.right {
+  right: 0;
+  
+}
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #970A42;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 20px;
+  padding: 0.1px;
+  width: 80px;
+  height: 55px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  margin-left:85px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+</style>
+
+</head>
+<body>
+<div id="wrapper">
+	<div id="header-wrapper">
+		<div id="header" class="container">
+			<div id="logo">
+				<h1><a href="#">Isolate Together</a></h1>
+				
+			</div>
+			<div>
+				<img src="logo.jpg" style="float:right;width:200px;height:200px;">
+			</div>
+		</div>
+		<div id="menu" class="container">
+			<ul>
+				<li><a href="#" accesskey="1" title="">Home</a></li>
+				<li><a href="#" accesskey="1" title="">Why Isolate Together</a></li>
+				<li class="current_page_item"><a href="#" accesskey="2" title="">Our Services</a></li>
+				<li><a href="#" accesskey="3" title="">About Us</a></li>
+				<li><a href="#" accesskey="4" title="">Sign In</a></li>
+				<li ><a href="#" accesskey="5" title="">Get Started</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div class="split left">
+
+<div class="w3-container">
+  <h2><strong>Saved Chats</strong></h2>
+  
+  <ul class="w3-ul w3-card-4">
+    <li class="w3-bar">
+      <span onclick="this.parentElement.style.display='none'" class="w3-bar-item w3-button w3-white w3-xlarge w3-right">×</span>
+      <img src="https://www.vexels.com/media/users//3/145908/raw/52eabf633ca6414e60a7677b0b917d92.jpg" class="w3-bar-item w3-circle w3-hide-small" style="width:85px">
+      <div class="w3-bar-item">
+        <span class="w3-large">Ravi Piparva</span><br>
+        
+        <i class="fas fa-map-marker-alt"></i>
+        <span>India</span>
+      </div>
+      <button class="button" style="vertical-align:middle"><span>Chat </span></button>
+    </li>
+
+    <li class="w3-bar">
+      <span onclick="this.parentElement.style.display='none'" class="w3-bar-item w3-button w3-white w3-xlarge w3-right">×</span>
+      <img src="https://image.freepik.com/free-vector/smiling-girl-avatar_102172-32.jpg" class="w3-bar-item w3-circle w3-hide-small" style="width:85px">
+      <div class="w3-bar-item">
+        <span class="w3-large">Rhea Kapoor</span><br>
+        <i class="fas fa-map-marker-alt"></i>
+        <span>USA</span>
+      </div>
+      <button class="button" style="vertical-align:middle"><span>Chat </span></button>
+    </li>
+
+
+     
+
+    <li class="w3-bar">
+      <span onclick="this.parentElement.style.display='none'" class="w3-bar-item w3-button w3-white w3-xlarge w3-right">×</span>
+      <img src="https://www.vexels.com/media/users//3/145908/raw/52eabf633ca6414e60a7677b0b917d92.jpg" class="w3-bar-item w3-circle w3-hide-small" style="width:85px">
+      <div class="w3-bar-item">
+        <span class="w3-large">Nikhil Sharma</span><br>
+        <i class="fas fa-map-marker-alt"></i>
+        <span>London</span>
+      </div>
+      <button class="button" style="vertical-align:middle"><span>Chat </span></button>
+    </li>
+
+    <li class="w3-bar">
+      <span onclick="this.parentElement.style.display='none'" class="w3-bar-item w3-button w3-white w3-xlarge w3-right">×</span>
+      <img src="https://www.vexels.com/media/users//3/145908/raw/52eabf633ca6414e60a7677b0b917d92.jpg" class="w3-bar-item w3-circle w3-hide-small" style="width:85px">
+      <div class="w3-bar-item">
+        <span class="w3-large">Samir Chouhan</span><br>
+        <i class="fas fa-map-marker-alt"></i>
+        <span>London</span>
+      </div>
+      <button class="button" style="vertical-align:middle"><span>Chat </span></button>
+    </li>
+  </ul>
+</div>
+
+</div>
+
+
+
+
+
+<div class="split right">
+
+<div class="w3-container">
+  <h2><strong>Discussion Forum</strong></h2>
+  
+  <ul class="w3-ul w3-card-4">
+    <li class="w3-bar">
+      <span onclick="this.parentElement.style.display='none'" class="w3-bar-item w3-button w3-white w3-xlarge w3-right">×</span>
+      <img src="https://www.unomaha.edu/news/events/2019/10/img/conversation_uno_mavdaily.jpg" class="w3-bar-item w3-circle w3-hide-small" style="width:85px ">
+      <div class="w3-bar-item">
+        <span class="w3-large">Movies Forum</span><br>
+        
+        
+      </div>
+      <button class="button" style="vertical-align:middle"><span>Enter </span></button>
+    </li>
+
+    <li class="w3-bar">
+      <span onclick="this.parentElement.style.display='none'" class="w3-bar-item w3-button w3-white w3-xlarge w3-right">×</span>
+      <img src="https://cdn.elearningindustry.com/wp-content/uploads/2016/05/top-10-books-every-college-student-read-1024x640.jpeg" class="w3-bar-item w3-circle w3-hide-small" style="width:85px">
+      <div class="w3-bar-item">
+        <span class="w3-large">Books Forum</span><br>
+        
+      </div>
+      <button class="button" style="vertical-align:middle"><span>Enter </span></button>
+    </li>
+
+
+     <li class="w3-bar">
+      <span onclick="this.parentElement.style.display='none'" class="w3-bar-item w3-button w3-white w3-xlarge w3-right">×</span>
+      <img src="https://media.wired.com/photos/5d09594a62bcb0c9752779d9/1:1/w_1500,h_1500,c_limit/Transpo_G70_TA-518126.jpg" class="w3-bar-item w3-circle w3-hide-small" style="width:85px">
+      <div class="w3-bar-item">
+        <span class="w3-large">Cars Forum</span><br>
+        
+      </div>
+      <button class="button" style="vertical-align:middle"><span>Enter </span></button>
+    </li>
+
+    <li class="w3-bar">
+      <span onclick="this.parentElement.style.display='none'" class="w3-bar-item w3-button w3-white w3-xlarge w3-right">×</span>
+      <img src="https://www.voicesofyouth.org/sites/voy/files/styles/blog_teaser/public/images/2019-01/politics3.jpg?h=ae1281eb&itok=7pVud1WX" class="w3-bar-item w3-circle w3-hide-small" style="width:85px">
+      <div class="w3-bar-item">
+        <span class="w3-large">Politics Forum</span><br>
+        
+      </div>
+      <button class="button" style="vertical-align:middle"><span>Enter </span></button>
+    </li>
+
+    <li class="w3-bar">
+      <span onclick="this.parentElement.style.display='none'" class="w3-bar-item w3-button w3-white w3-xlarge w3-right">×</span>
+      <img src="https://www.vexels.com/media/users//3/145908/raw/52eabf633ca6414e60a7677b0b917d92.jpg" class="w3-bar-item w3-circle w3-hide-small" style="width:85px">
+      <div class="w3-bar-item">
+        <span class="w3-large">Nikhil Sharma</span><br>
+        <i class="fas fa-map-marker-alt"></i>
+        <span>London</span>
+      </div>
+      <button class="button" style="vertical-align:middle"><span>Chat </span></button>
+    </li>
+  </ul>
+</div>
+
+
+</div>
+</body>
+</html>

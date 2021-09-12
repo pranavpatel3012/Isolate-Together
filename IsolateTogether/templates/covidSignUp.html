@@ -1,0 +1,391 @@
+{% load static %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title></title>
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900|Varela+Round"
+    rel="stylesheet" />
+  <link href="{% static 'signin/default1.css' %}" rel="stylesheet" type="text/css" media="all" />
+  <link href="{% static 'signin/fonts.css' %}" rel="stylesheet" type="text/css" media="all" />
+  <link rel='stylesheet' href='https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css'>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link href="{% static 'home/rangeslider.css' %}" rel="stylesheet" type="text/css" media="all" />
+</head>
+
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    background-color: #f1f1f1;
+  }
+
+  #regForm {
+    background-color: #ffffff;
+    margin: 100px auto;
+    font-family: Raleway;
+    padding: 30px;
+    width: 40%;
+    min-width: 300px;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  input {
+    padding: 10px;
+    width: 100%;
+    font-size: 17px;
+    font-family: Raleway;
+    border: 1px solid #aaaaaa;
+  }
+
+  /* Mark input boxes that gets an error on validation: */
+  input.invalid {
+    background-color: #ffdddd;
+  }
+
+  /* Hide all steps by default: */
+  .tab {
+    display: none;
+  }
+
+  .Button1 {
+    font-family: 'Varela Round', sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    width: 160px;
+    height: 45px;
+
+
+    color: white border: 2px solid black;
+    border-radius: 5px;
+    background-color: #A2A2A2;
+    color: black;
+    padding: 4px 28px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .selected {
+    color: white;
+    background: #970A42
+  }
+
+  .success {
+    border-color: #4CAF50;
+    color: black;
+  }
+
+  .success:hover {
+    background-color: #970A42;
+    color: white;
+  }
+
+  .button#cssColorChange:active {
+    color: white;
+    background: red
+  }
+
+  button {
+    background-color: #970A42;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 17px;
+    font-family: Raleway;
+    cursor: pointer;
+  }
+
+  button:hover {
+    opacity: 0.8;
+  }
+
+  #prevBtn {
+    background-color: #202020;
+  }
+
+  /* Make circles that indicate the steps of the form: */
+  .step {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbbbbb;
+    border: none;
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 0.5;
+  }
+
+  .step.active {
+    opacity: 1;
+  }
+
+  /* Mark the steps that are finished and valid: */
+  .step.finish {
+    background-color: #970A42;
+
+
+
+    /* The container */
+    .container {
+      display: block;
+      position: relative;
+      padding-left: 35px;
+      margin-bottom: 12px;
+      cursor: pointer;
+      font-size: 18px;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    /* Hide the browser's default checkbox */
+    .container input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+    }
+
+    /* Create a custom checkbox */
+    .checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 25px;
+      width: 25px;
+      background-color: #eee;
+    }
+
+    /* On mouse-over, add a grey background color */
+    .container:hover input~.checkmark {
+      background-color: #ccc;
+    }
+
+    /* When the checkbox is checked, add a blue background */
+    .container input:checked~.checkmark {
+      background-color: #2196F3;
+    }
+
+    /* Create the checkmark/indicator (hidden when not checked) */
+    .checkmark:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+
+    /* Show the checkmark when checked */
+    .container input:checked~.checkmark:after {
+      display: block;
+    }
+
+    /* Style the checkmark/indicator */
+    .container .checkmark:after {
+      left: 9px;
+      top: 5px;
+      width: 5px;
+      height: 10px;
+      border: solid white;
+      border-width: 0 3px 3px 0;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+</style>
+
+<body>
+  <!-- partial:index.partial.html -->
+
+  <div id="wrapper">
+    <div id="header-wrapper">
+      <div id="header" class="container">
+        <div id="logo">
+          <h1><a href="{% url 'home' %}">Isolate Together</a></h1>
+        </div>
+
+        <div>
+          <a href="{% url 'home' %}">
+            <img src="{% static 'home/logo.jpg' %}" style="float:right;width:200px;height:200px;">
+          </a>
+        </div>
+      </div>
+      <div id="menu" class="container">
+        <ul>
+          <li class="current_page_item"><a href="{% url 'home' %}" accesskey="1" title="">Home</a></li>
+          <li><a href="/whyIsolateTogether" accesskey="1" title="">Why Isolate Together</a></li>
+          <li><a href="/ourService_card" accesskey="2" title="">Our Services</a></li>
+          <li><a href="#" accesskey="3" title="">About Us</a></li>
+          <li><a href="/signin" accesskey="4" title="">Sign In</a></li>
+          <li><a href="{% url 'select' %}" accesskey="5" title="">Get Started</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <form id="regForm" action="registered" method="POST">
+    {% csrf_token %}
+    <h1>Register:</h1>
+    <div>
+
+      <p><input type="email" id="email" placeholder="Email..." oninput="this.className = ''" name="email"></p>
+      <p><input id="password" placeholder="Password..." oninput="this.className = ''" name="password" type="password">
+      </p>
+      <p><input id="confirmPassword" placeholder="Confirm Password..." oninput="this.className = ''" type="password">
+      </p>
+    </div>
+    <input type="hidden" name="normalSignin" value="1" id="normalSignin">
+    <input type="hidden" name="idToken" id="idToken">
+    <div style="overflow:auto;">
+      <div style="float:right;">
+        <button type="button" id="submitBtn" onclick="check()">submit</button>
+      </div>
+    </div>
+    <button type="button" id="googleSignin">Sign Up Using Google</button>
+    <!-- Circles which indicates the steps of the form: -->
+    <div style="text-align:center;margin-top:40px;">
+      <span class="step"></span>
+      <span class="step"></span>
+      <span class="step"></span>
+
+    </div>
+  </form>
+
+  <script>
+
+    function check() {
+      if (document.getElementById("email").value.length == 0) {
+        alert("Enter a valid email");
+        return false;
+      }
+      if ((document.getElementById('password').value).length < 6) {
+        alert("Password should be atleast 6 character");
+        return false;
+      }
+      if (document.getElementById('password').value != document.getElementById('confirmPassword').value) {
+        alert("Password does not match");
+        return false;
+      }
+      checkEmailExist()
+    }
+
+    function checkEmailExist() {
+
+      var mail = document.getElementById("email").value;
+      if (mail == null) return false;
+      $.ajax({
+        type: 'POST',
+        url: "{% url 'checkEmail' %}",
+        data: {
+          email: mail,
+          csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val()
+        },
+        success: function (data) {
+          if (data['exist'] == "1") {
+            alert("Email already exist ")
+          }
+          else {
+            document.getElementById("regForm").submit();
+          }
+        }
+      })
+    }
+
+
+  </script>
+
+
+  <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-database.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-auth.js"></script>
+
+
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+   https://firebase.google.com/docs/web/setup#available-libraries -->
+
+  <script>
+    // Your web app's Firebase configuration
+    
+    // # Obviously keys are fake
+    var firebaseConfig = {
+      apiKey : "AIzaSyD-Eq232dW_9loS8h6f-KWAFFIivAsdylbc",
+      authDomain : "isolate-together-88b63.firebaseapp.com",
+      databaseURL : "https://isolate-together-88b63.firebaseio.com",
+      projectId : "isolate-together-8c363",
+      storageBucket : "isolate-together-8c363.appspot.com",
+      messagingSenderId : "769043346241",
+      appId : "1:76904251146241:web:c69ad42353107adbca6320"
+    };
+    
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
+  <script type="text/javascript" src="firebasedemo_js.js"></script>
+  <!-- <script src="{% static 'signin/googlesignin.js' %}"></script> -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script src="{% static 'signin/signin.js' %}"></script>
+
+
+  <script>
+    googleSignin.addEventListener('click', (e) => {
+
+      var provider = new firebase.auth.GoogleAuthProvider();
+
+      firebase.auth().signInWithPopup(provider).then(function (result) {
+        // This gives you a Google Access Token. You can use it to access the Google API.
+        //alert("hellooo");
+        var token = result.credential.idToken;
+        // The signed-in user info.
+        var user = result.user;
+        console.log(user + "  " + token);
+
+
+        document.getElementById("normalSignin").value = 0;
+        //document.getElementById("idToken").value = result.credential.idToken;
+        document.getElementById("email").value = result.additionalUserInfo.profile.email;
+        console.log(result)
+        //alert("helo")
+        firebase.auth().currentUser.getIdToken(/* forceRefresh */ true).then(function (idToken) {
+          //alert("okk")
+          document.getElementById("idToken").value = idToken;
+          document.getElementById("regForm").submit();
+
+        }).catch(function (error) {
+          alert(error)
+        });
+
+      }).catch(function (error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // The email of the user's account used.
+        var email = error.email;
+        // The firebase.auth.AuthCredential type that was used.
+        var credential = error.credential;
+        // ...
+        //alert("ohhhhh")
+      });
+
+
+    });
+  </script>
+
+
+</body>
+
+</html>

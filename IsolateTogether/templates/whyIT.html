@@ -1,0 +1,116 @@
+{% load static %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title></title>
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900|Varela+Round"
+    rel="stylesheet" />
+  <link href="{% static 'WhyIsolateTogether/default1.css' %}" rel="stylesheet" type="text/css" media="all" />
+  <link href="{% static 'WhyIsolateTogether/fonts.css' %}" rel="stylesheet" type="text/css" media="all" />
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <!--[if IE 6]>
+<link href="default_ie6.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+</head>
+
+<body>
+  <div id="wrapper">
+    <div id="header-wrapper">
+      <div id="header" class="container">
+        <div id="logo">
+          <h1><a href="{% url 'homea' %}">Isolate Together</a></h1>
+
+        </div>
+        <div>
+          <img src="{% static 'WhyIsolateTogether/logo.jpg' %}" style="float:right;width:200px;height:200px;">
+        </div>
+      </div>
+      <div id="menu" class="container">
+        <ul>
+          <li><a href="{% url 'homea' %}" accesskey="1" title="">Home</a></li>
+          <li class="current_page_item"><a href="#" accesskey="1" title="">Why Isolate Together</a></li>
+          <li><a href="/ourService_card" accesskey="2" title="">Our Services</a></li>
+          <li><a href="#" accesskey="3" title="">About Us</a></li>
+          {% if username %}
+          <li><a href="{% url 'profile' %}" accesskey="4" title="">{{ username }}</a></li>
+          <li><a href="{% url 'logout' %}" accesskey="5" title="">Logout</a></li>
+          {% else %}
+          <li><a href="/signin" accesskey="4" title="">Sign In</a></li>
+          <li><a href="{% url 'select' %}" accesskey="5" title="">Get Started</a></li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="w3-row w3-padding-64" id="about">
+    <div class="w3-col m6 w3-padding-large w3-hide-small">
+      <img src="https://www.immigration.ca/wp-content/uploads/2020/04/Isolation_330541744.jpeg"
+        class="w3-round w3-image w3-opacity-min" alt="Table Setting" width="600" height="450" align="right">
+      <hr>
+      <img src="https://bnn-news.com/wp-content/uploads/2020/08/sasha-freemind-pv5weeyxmwu-unsplash-e1598332834452.jpg"
+        class="w3-round w3-image w3-opacity-min" alt="Table Setting" width="600" height="750" align="right">
+    </div>
+
+    <div class="w3-col m5 w3-padding-large">
+      <h1 class="w3-center">why isolate together</h1><br>
+      <h5 class="w3-center"><strong>Need of the Hour</strong></h5>
+      <p class="w3-large"> We asked many of the Covid affected patients from our friends,family or acquaintances that
+        what was the worst thing about
+        being a Covid patient.And majority of them replied that it was the boredom which made them feel horrible about
+        their quarantine.
+        Just being surrounded by 4 walls and zero human interaction would make anyone go crazy.They were already fed up
+        of the social media sites and
+        wanted something new for entertainment.<span class="w3-tag w3-light-grey"></span> </p>
+      <p class="w3-large w3-text-grey w3-hide-medium">Hence keeping in mind these modern world problems, we decided to
+        make <span class="w3-tag w3-light-grey">"Isolate Together"</span>,
+        an application where the patients can come and reduce their boredom by various means. </p>
+    </div>
+    <img src="https://stageworksmn.com/wp-content/uploads/2017/01/SCROLL-DOWN-button-kopie1.gif"
+      class="w3-round w3-image w3-opacity-min" alt="Table Setting" width="250" height="450" align="left">
+  </div>
+
+  <hr>
+
+  <div class="w3-row w3-padding-64" id="menu">
+    <div class="w3-col l6 w3-padding-large">
+      <h1 class="w3-center">Our Motive</h1><br>
+
+      <p class="w3-text-grey">We would provide services for entertainment of the users like chatting,games and much
+        more.By this,we aim to
+        destress the already stressed lives of the affected patients.</p><br>
+
+      <p class="w3-text-grey">Apart from killing boredom, users can use this amazing platform for many productive things
+        like making contacts
+        with people having similar interests, getting cured rapidly by suggestions of home remedies.This application
+        would basically
+        become a bridge between the patients and the recovered users.</p><br>
+
+      <p class="w3-text-grey">We live in an era where technology is advancing at an unprecedented rate.There are many
+        pros and cons in the same.
+        Thus we would try to be fruitful in every service we provide.Would need your co-operation.Other than that you
+        are always welcomed. :D </p><br>
+      <p class="w3-text-grey">See you onboard in this wonderful journey.</p><br>
+      <p class="w3-text-grey">Happy Quarantine</p>
+      <p class="w3-text-grey"><strong>
+          <h3>Team Isolate Together</h3>
+        </strong></p>
+
+    </div>
+
+    <div class="w3-col l6 w3-padding-large">
+      <img
+        src="https://cdn.proschoolonline.com/wp-content/uploads/2019/03/6-types-of-people-you-must-add-to-your-network.jpg"
+        class="w3-round w3-image w3-opacity-min" alt="Menu" width="600" height="750" align="left">
+    </div>
+  </div>
+
+  <hr>

@@ -1,0 +1,174 @@
+{% load static %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
+<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900|Varela+Round"
+  rel="stylesheet" />
+<link href="{% static 'FromTheRecovered/ftrhr1.css' %}" rel="stylesheet" type="text/css" media="all" />
+<link href="{% static 'FromTheRecovered/fonts.css' %}" rel="stylesheet" type="text/css" media="all" />
+
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+  <link rel="stylesheet" href="{% static 'FromTheRecovered/ftrhr.css' %}">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+
+<body>
+  <!-- partial:index.partial.html -->
+
+  <head>
+    <meta charset="UTF-8">
+    <title>FL Digital Stories TemplatePublicWorks</title>
+  </head>
+
+  <body>
+
+    <div id="wrapper">
+      <div id="header-wrapper">
+        <div id="header" class="container">
+          <div id="logo">
+            <h1><a href="{% url 'homea' %}">Isolate Together</a></h1>
+
+          </div>
+          <div>
+            <img src="{% static 'OurServices/logo.jpg' %}" style="float:right;width:200px;height:200px;">
+          </div>
+        </div>
+        <div id="menu" class="container">
+          <ul>
+            <li><a href="{% url 'homea' %}" accesskey="1" title="">Home</a></li>
+            <li><a href="/whyIsolateTogether" accesskey="1" title="">Why Isolate Together</a></li>
+            <li><a href="/ourService_card" accesskey="2" title="">Our Services</a></li>
+            <li><a href="/aboutus" accesskey="3" title="">About Us</a></li>
+            {% if username %}
+            <li><a href="{% url 'profile' %}" accesskey="4" title="">{{ username }}</a></li>
+            <li><a href="{% url 'logout' %}" accesskey="5" title="">Logout</a></li>
+            {% else %}
+            <li><a href="/signin" accesskey="4" title="">Sign In</a></li>
+            <li><a href="{% url 'select' %}" accesskey="5" title="">Get Started</a></li>
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="abc">
+      <div class="w3-row w3-padding-64" id="about">
+        <div class="w3-col m6 w3-padding-large w3-hide-small">
+          <img
+            src="https://cdn.i-scmp.com/sites/default/files/styles/og_image_scmp_coronavirus_generic/public/d8/images/methode/2020/07/30/36e62aa8-ce50-11ea-9c1b-809cdd34beb3_image_hires_142841.jpg?itok=G1bZQkBV&v=1596090537"
+            class="w3-round w3-image w3-opacity-min" alt="Table Setting" width="600" height="450" align="right"
+            style="margin-top: 130px;">
+          <hr>
+
+        </div>
+
+        <div class="w3-col m5 w3-padding-large">
+          <h1 class="w3-center" style="color:#970A42;">Home remedies</h1>
+          <h5 class="w3-center"><strong>Need Of The Hour</strong></h5>
+          <p class="w3-large"> <span class="w3-tag w3-light-grey"></span> </p>
+          <p class="w3-large w3-text-black w3-hide-medium">
+            There is nothing supernatural with the use of natural home remedies to treat any kinds of illnesses.
+            Fruits and vegetables as well as herbs and spices have been recommended to cure these.
+            They have also been used as the earliest form of medicines. Old societies have used this form of treatment
+            until
+            they were replaced by modern medicines. However, many are still going back to the old style of treating
+            illnesses
+            for it has been proven to give more benefits than its over the counter counterparts.
+            <strong>DO NOT
+              BELEIVE OR SPREAD RUMOURS.</strong> </p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div id="slideshow">
+      <div class="btns">
+        <button id="enter-slideshow">Enter Slideshow</button>
+        <button id="prev" hidden>
+          <i class="left"></i>
+        </button>
+        <button id="next" hidden>
+          <i class="right"></i>
+        </button>
+      </div>
+      <ul>
+        <li class="intro show">
+          <h1>Do Not Worry!</h1>
+          <h3 style="color:white;">Our health care experts at <strong style="color:#970A42;">Isolate Together</strong>
+            have verified all the suggestions made by the recovered patients.</h3>
+        </li>
+
+        
+
+
+
+        <li class="game50">
+          <div class="game-desc">
+            <article>
+
+              The ministry suggested drinking 1 cup or 150 ml of Ayush Kwath every day. It is a combination of medicinal
+              herbs like four parts
+              Tulsi (holy basil), two parts Dalchini (cinnamon), two parts Sunthi (ginger root) and one part Krishna
+              Marich
+              (black pepper). The ministry has also previously released instructions on how to make this drink at home.
+              Take all the dried ingredients and make a coarse powder. Divide it into tea bags of 3 grams each.
+              It can be added to 150 ml of boiled water once or twice a day. You can also add raisins, lemon juice or
+              jaggery to enhance the taste. This combination is said to not only boost immunity but also promote general
+              well-being.<br /><br />
+
+              —Rajesh Prasad,44
+            </article>
+          </div>
+        </li>
+        <li class="game50">
+          <div class="game-desc">
+            <article>
+
+              The next prescription by the ministry is to have 1 gram of Sunshmani Vati every day. It is also known as
+              Guduchi ghana
+              vati and is made with the bark of Giloy tree. It is considered useful in treating all types of fevers.
+              It has mild anti-inflammatory and anti-pyretic effects, providing benefits to those who are recovering
+              from
+              the after-effects of diseases like COVID-19. Giloy is also useful in expelling toxins arising from
+              undigested
+              food particles that can cause fever. It is also helpful in providing relief from headache, indigestion,
+              drop in appetite,
+              body pain and burning sensation. You can either add the extract in the tea or have 1 tablet of 500 mg
+              daily.<br /><br />
+
+              —Arjun Rao,52
+            </article>
+          </div>
+        </li>
+
+
+        {% for name,hr,age in HR %}
+
+
+        <li class="game50">
+          <div class="game-desc">
+            <article>
+
+              {{hr}}<br /><br />
+
+              —{{name}},{{age}}
+            </article>
+          </div>
+        </li>
+        {% endfor %}  
+        
+      </ul>
+    </div>
+  </body>
+  <!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.4/jquery.touchSwipe.js'></script>
+  <script src="{% static 'FromTheRecovered/ftrhr.js' %}"></script>
+
+</body>
+
+</html>

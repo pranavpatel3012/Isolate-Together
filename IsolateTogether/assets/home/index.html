@@ -1,0 +1,340 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900|Varela+Round" rel="stylesheet" />
+<link href="default.css" rel="stylesheet" type="text/css" media="all" />
+<link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
+<link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&amp;display=swap'>
+
+
+</head>
+<body>
+<div id="wrapper">
+	<div id="header-wrapper">
+		<div id="header" class="container">
+			<div id="logo">
+				<h1><a href="#">Isolate Together</a></h1>
+				
+			</div>
+			<div>
+				<img src="logo.jpg" style="float:right;width:200px;height:200px;">
+			</div>
+		</div>
+		<div id="menu" class="container">
+			<ul>
+				<li class="current_page_item"><a href="#" accesskey="1" title="">Home</a></li>
+				<li><a href="#" accesskey="1" title="">Why Isolate Together</a></li>
+				<li><a href="#" accesskey="2" title="">Our Services</a></li>
+				<li><a href="#" accesskey="3" title="">About Us</a></li>
+				<li><a href="#" accesskey="4" title="">Sign In</a></li>
+				<li><a href="#" accesskey="5" title="">Get Started</a></li>
+			</ul>
+		</div>
+	</div>
+
+
+	<div class="slideshow-container">
+
+		<div class="mySlides fade">
+		  <div class="numbertext">1 / 3</div>
+		  <img src="img_nature_wide.jpg" style="width:100%">
+		  <div class="text">Caption Text</div>
+		</div>
+		
+		<div class="mySlides fade">
+		  <div class="numbertext">2 / 3</div>
+		  <img src="img_snow_wide.jpg" style="width:100%">
+		  <div class="text">Caption Two</div>
+		</div>
+		
+		<div class="mySlides fade">
+		  <div class="numbertext">3 / 3</div>
+		  <img src="img_mountains_wide.jpg" style="width:100%">
+		  <div class="text">Caption Three</div>
+		</div>
+		
+		<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+		<a class="next" onclick="plusSlides(1)">&#10095;</a>
+		
+		</div>
+		<br>
+		
+		<div style="text-align:center">
+		  <span class="dot" onclick="currentSlide(1)"></span> 
+		  <span class="dot" onclick="currentSlide(2)"></span> 
+		  <span class="dot" onclick="currentSlide(3)"></span> 
+		</div>
+
+		<script>
+			var slideIndex = 1;
+			showSlides(slideIndex);
+			
+			function plusSlides(n) {
+			  showSlides(slideIndex += n);
+			}
+			
+			function currentSlide(n) {
+			  showSlides(slideIndex = n);
+			}
+			
+			function showSlides(n) {
+			  var i;
+			  var slides = document.getElementsByClassName("mySlides");
+			  var dots = document.getElementsByClassName("dot");
+			  if (n > slides.length) {slideIndex = 1}    
+			  if (n < 1) {slideIndex = slides.length}
+			  for (i = 0; i < slides.length; i++) {
+				  slides[i].style.display = "none";  
+			  }
+			  for (i = 0; i < dots.length; i++) {
+				  dots[i].className = dots[i].className.replace(" active", "");
+			  }
+			  slides[slideIndex-1].style.display = "block";  
+			  dots[slideIndex-1].className += " active";
+			}
+			</script>
+	<div id="page" class="container">
+		<div><a href="#" ><img src="img_mountains_wide" alt="" /></a></div>
+		<div class="column1">
+			<div class="title">
+				<h2>Join Thousands of Covid-19 Patients</h2>
+				<span class="byline">Get Locked Down with <strong>Isolate Together</strong></span>
+			</div>
+			<p>We at <strong>Isolate Together</strong> aim to reduce the boredom in the lives of Covid Patients by providing them some means of entertainment which we think that could be useful.
+			So, what are you waiting for..Join the journey now! </p>
+			<a href="#" class="button">Get Started</a>
+		</div>
+		<div class="column3">
+			<div class="title">
+				<h2>Corona Tracker</h2>
+			</div>
+			<img src="covid_tracker.jpg" width="282" height="150" alt="" />
+			<p>Get Real time Information of the Covid Cases Globally</p>
+			<a href="https://www.covid19india.org/" class="button">Covid Tracker</a>
+		</div>
+		<div class="column4">
+			<div class="title">
+				<h2>Tips & Suggestions</h2>
+			</div>
+			<img src="Tips-and-Advice.jpg" width="282" height="150" alt="" />
+			<p>Get some information which might be helpful for your speedy recovery</p>
+			<a href="#" class="button">Suggestions</a>
+		</div>
+	</div>
+	<div id="portfolio-wrapper">
+		<div id="portfolio" class="container">
+			<div class="title">
+				<h2>FROM THE RECOVERED</h2>
+				<span class="byline">Some words from those who defeated Covid-19</span> </div>
+			<div class="column1">
+				<div class="box">
+					<img src="covid_survivor.jpg" width="282" height="150" alt="" />
+					<h3><strong>Experience</strong></h3>
+					<p>Success Stories of those who defeated Covid-19</p>
+					<a href="#" class="button">Learn More</a> </div>
+			</div>
+			<div class="column2">
+				<div class="box">
+					<img src="skills.jpg" width="282" height="150" alt="" />
+					<h3><strong>Skills Learnt</strong></h3>
+					<p>How did these patients did something productive in their Quarantine</p>
+					<a href="#" class="button">Learn More</a> </div>
+			</div>
+			<div class="column3">
+				<div class="box">
+					<img src="home.jpg" width="282" height="150" alt="" />
+					<h3><strong>Home Remedies</strong></h3>
+					<p>Home Remedies which helped people recover</p>
+					<a href="#" class="button">Learn More</a> </div>
+			</div>
+			<div class="column4">
+				<div class="box">
+					<img src="best_doctors.jpg" width="282" height="150" alt="" />
+					<h3><strong>Best doctors</strong></h3>
+					<p>Which are the Best Doctors in your location</p>
+					<a href="#" class="button">Learn More</a> </div>
+			</div>
+		</div>
+	</div>
+
+	<!--Testimonials-->
+	<div class="testi-container">
+		<section id="testim" class="testim">
+				 <div class="testim-cover">
+					<div class="wrap">
+		
+						<span id="right-arrow" class="arrow right fa fa-chevron-right"></span>
+						<span id="left-arrow" class="arrow left fa fa-chevron-left "></span>
+						<ul id="testim-dots" class="dots">
+							<li class="dot active"></li><!--
+							--><li class="dot"></li><!--
+							--><li class="dot"></li><!--
+							--><li class="dot"></li><!--
+							--><li class="dot"></li>
+						</ul>
+						<div id="testim-content" class="cont">
+							
+							<div class="active">
+								<div class="img"><img src="avtar3.png" alt=""></div>
+								<h2>Lorem P. Ipsum</h2>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>                    
+							</div>
+		
+							<div>
+								<div class="img"><img src="avtar4.png" alt=""></div>
+								<h2>Mr. Lorem Ipsum</h2>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>                    
+							</div>
+		
+							<div>
+								<div class="img"><img src="avtar5.png" alt=""></div>
+								<h2>Lorem Ipsum</h2>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>                    
+							</div>
+		
+							<div>
+								<div class="img"><img src="avtar6.jpg" alt=""></div>
+								<h2>Lorem De Ipsum</h2>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>                    
+							</div>
+		
+							<div>
+								<div class="img"><img src="avtar1.jfif" alt=""></div>
+								<h2>Ms. Lorem R. Ipsum</h2>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>                    
+							</div>
+		
+						</div>
+		
+					</div>
+				 </div>
+			</section>
+			<script>
+
+								// vars
+				'use strict'
+				var	testim = document.getElementById("testim"),
+						testimDots = Array.prototype.slice.call(document.getElementById("testim-dots").children),
+					testimContent = Array.prototype.slice.call(document.getElementById("testim-content").children),
+					testimLeftArrow = document.getElementById("left-arrow"),
+					testimRightArrow = document.getElementById("right-arrow"),
+					testimSpeed = 4500,
+					currentSlide = 0,
+					currentActive = 0,
+					testimTimer,
+						touchStartPos,
+						touchEndPos,
+						touchPosDiff,
+						ignoreTouch = 30;
+				;
+
+				window.onload = function() {
+
+					// Testim Script
+					function playSlide(slide) {
+						for (var k = 0; k < testimDots.length; k++) {
+							testimContent[k].classList.remove("active");
+							testimContent[k].classList.remove("inactive");
+							testimDots[k].classList.remove("active");
+						}
+
+						if (slide < 0) {
+							slide = currentSlide = testimContent.length-1;
+						}
+
+						if (slide > testimContent.length - 1) {
+							slide = currentSlide = 0;
+						}
+
+						if (currentActive != currentSlide) {
+							testimContent[currentActive].classList.add("inactive");            
+						}
+						testimContent[slide].classList.add("active");
+						testimDots[slide].classList.add("active");
+
+						currentActive = currentSlide;
+					
+						clearTimeout(testimTimer);
+						testimTimer = setTimeout(function() {
+							playSlide(currentSlide += 1);
+						}, testimSpeed)
+					}
+
+					testimLeftArrow.addEventListener("click", function() {
+						playSlide(currentSlide -= 1);
+					})
+
+					testimRightArrow.addEventListener("click", function() {
+						playSlide(currentSlide += 1);
+					})    
+
+					for (var l = 0; l < testimDots.length; l++) {
+						testimDots[l].addEventListener("click", function() {
+							playSlide(currentSlide = testimDots.indexOf(this));
+						})
+					}
+
+					playSlide(currentSlide);
+
+					// keyboard shortcuts
+					document.addEventListener("keyup", function(e) {
+						switch (e.keyCode) {
+							case 37:
+								testimLeftArrow.click();
+								break;
+								
+							case 39:
+								testimRightArrow.click();
+								break;
+
+							case 39:
+								testimRightArrow.click();
+								break;
+
+							default:
+								break;
+						}
+					})
+						
+						testim.addEventListener("touchstart", function(e) {
+								touchStartPos = e.changedTouches[0].clientX;
+						})
+					
+						testim.addEventListener("touchend", function(e) {
+								touchEndPos = e.changedTouches[0].clientX;
+							
+								touchPosDiff = touchStartPos - touchEndPos;
+							
+								console.log(touchPosDiff);
+								console.log(touchStartPos);	
+								console.log(touchEndPos);	
+
+							
+								if (touchPosDiff > 0 + ignoreTouch) {
+										testimLeftArrow.click();
+								} else if (touchPosDiff < 0 - ignoreTouch) {
+										testimRightArrow.click();
+								} else {
+									return;
+								}
+							
+						})
+				}
+
+			</script>
+		</div>
+		<script src="https://use.fontawesome.com/1744f3f671.js"></script>
+		<!-- partial -->
+		  <!--<script  src="./script.js"></script>-->
+
+</div>
+<div id="footer">
+	<p>&copy; CopyRight. All rights reserved. </p>
+</div>
+</body>
+</html>

@@ -1,0 +1,127 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" href="{% static 'aboutus/aboutus.css' %}">
+  <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900|Varela+Round"
+   rel="stylesheet" />
+   
+   <link href="{% static 'aboutus/fonts.css' %}" rel="stylesheet" type="text/css" media="all" />
+  
+</head>
+<body>
+
+   <div id="wrapper">
+      <div id="header-wrapper">
+         <div id="header" class="container1">
+            <div id="logo">
+               <h1><a href="#">Isolate Together</a></h1>
+
+            </div>
+            <div>
+               <img src="{% static 'aboutus/logo.jpg' %}" style="float:right; width:200px; height:200px; position:relative; right:-15px;">
+            </div>
+         </div>
+         <div id="menu" class="container1">
+            <ul>
+               <li><a href="{% url 'homea' %}" accesskey="1" title="">Home</a></li>
+               <li><a href="/whyIsolateTogether" accesskey="1" title="">Why Isolate Together</a></li>
+               <li><a href="/ourService_card" accesskey="2" title="">Our Services</a></li>
+               <li><a href="/aboutus" accesskey="3" title="">About Us</a></li>
+               {% if username %}
+               <li><a href="{% url 'profile' %}" accesskey="4" title="">{{ username }}</a></li>
+               <li><a href="{% url 'logout' %}" accesskey="5" title="">Logout</a></li>
+               {% else %}
+               <li><a href="/signin" accesskey="4" title="">Sign In</a></li>
+               <li><a href="{% url 'select' %}" accesskey="5" title="">Get Started</a></li>
+               {% endif %}
+             </ul>
+         </div>
+      </div>
+   </div>
+
+<!-- partial:index.partial.html -->
+
+<div class="container">
+   
+   <div class="about">
+      <div class="left">
+         <h1>About us</h1>
+         <hr>
+         <p>We, at Isolate Together, got fascinated by the idea of providing entertainment to the Covid positive users who are in isolation to reduce their 
+            boredom. Along with that, we thought how we could make it productive along with entertainment.Hence we came up with all these great ideas which
+            we hope you would like.We would also appreciate your co-operation in maintaining the integrity of our application. It's a humble request to you all,
+            the users to provide all the correct information and avoid spamming. Its not only us, but WE TOGETHER can overcome this pandemic. Wish you a speedy
+            recovery.</p>
+
+         <p><strong>Team Isolate Together<br></strong></p>
+
+      </div>
+      <div class="right">
+         <img src="{% static 'aboutus/together.jfif' %}">
+      </div>
+      <div class="clear"></div>
+   </div>
+   
+   
+   
+   
+   
+   
+  
+       <div class="team">
+      <h1> Our Team<hr></h1>
+          
+          
+          
+      <div  class="card">
+         <div class="circle-container1">
+            
+         </div>
+         <h2>Pranav Patel</h2>
+         <h4>B.Tech</h4>
+         <p>Information Technology<br></p>
+      </div>
+          
+          
+          
+      <div class="card">
+         <div class="circle-container2">
+            
+         </div>
+         <h2>Ravi Piparva </h2>
+         <h4>B.Tech</h4>
+          <p>Information Technology<br></p>
+      </div>
+          
+          
+          
+      <div class="card">
+         <div class="circle-container3">
+            
+         </div>
+         <h2>Miit Sajnani</h2>
+         <h4>B.Tech</h4>
+          <p>Information Technology<br></p>
+      </div>
+          
+          
+          
+      
+        
+          
+          
+   </div>
+
+   
+</div>
+<footer>
+   <br>
+   <p>Copyright All rights reserved</p>
+</footer>
+<!-- partial -->
+  
+</body>
+</html>
